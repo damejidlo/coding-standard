@@ -1,0 +1,8 @@
+{
+	"name": "damejidlo/coding-standart",
+	"license": "MIT",
+	"require": {},
+	"require-dev": {
+		"slevomat/coding-standard": "^1.0"
+	}
+}
