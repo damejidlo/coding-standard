@@ -30,4 +30,10 @@
 		<exclude name="SlevomatCodingStandard.Namespaces.UnusedUses"/>
 		<exclude name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces"/>
 	</rule>
+	<rule ref="../../../../../vendor/zenify/coding-standard/src/ZenifyCodingStandard/Sniffs/WhiteSpace/PropertiesMethodsMutualSpacingSniff.php"/>
+	<rule ref="ZenifyCodingStandard.WhiteSpace.PropertiesMethodsMutualSpacing">
+		<properties>
+			<property name="blankLinesInBetween" value="3"/>
+		</properties>
+	</rule>
 </ruleset>

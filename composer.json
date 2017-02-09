@@ -2,6 +2,7 @@
 	"name": "damejidlo/coding-standard",
 	"license": "MIT",
 	"require": {
-		"slevomat/coding-standard": "^1.0"
+		"slevomat/coding-standard": "^1.0",
+		"zenify/coding-standard": "^4.2"
 	}
 }
