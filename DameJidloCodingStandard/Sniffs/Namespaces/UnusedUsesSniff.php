@@ -1,6 +1,6 @@
 <?php
 
-namespace DameJidloStandard\Sniffs\Namespaces;
+namespace DameJidloCodingStandard\Sniffs\Namespaces;
 
 use SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff as SlevomatUnusedUsesSniff;
 
