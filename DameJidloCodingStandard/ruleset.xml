@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="DameJidloStandard">
-	<description>A custom coding standard.</description>
+<ruleset name="DameJidloCodingStandard">
+	<description>DameJidlo.cz coding standard.</description>
 	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
 	<rule ref="Generic.PHP.UpperCaseConstant"/>
 	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
@@ -21,7 +21,7 @@
 	<rule ref="PSR2.Files.ClosingTag"/>
 	<rule ref="PSR2.Methods.MethodDeclaration"/>
 	<rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
-	<rule ref="../../../../../vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml">
+	<rule ref="../../../../vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml">
 		<exclude name="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
 		<exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName"/>
 		<exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameAfterKeyword"/>
