@@ -1,6 +1,6 @@
 <?php
 
-namespace DameJidloStandard\Sniffs\Classes;
+namespace DameJidloCodingStandard\Sniffs\Classes;
 
 use SlevomatCodingStandard\Sniffs\Classes\UnusedPrivateElementsSniff as SlevomatUnusedPrivateElementsSniff;
 
