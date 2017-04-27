@@ -4,5 +4,8 @@
 	"require": {
 		"slevomat/coding-standard": "^1.0",
 		"zenify/coding-standard": "^4.2"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^6.1"
 	}
 }
