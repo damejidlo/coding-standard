@@ -12,6 +12,8 @@ class UseOfSmartObjectSniff implements \PHP_CodeSniffer_Sniff
 
 	const SMART_OBJECT_CLASS_NAME = 'SmartObject';
 
+	const CODE_USING_SMART_OBJECT_EXPECTED = 'UsingSmartObjectExpected';
+
 	/**
 	 * @inheritdoc
 	 */
@@ -34,7 +36,7 @@ class UseOfSmartObjectSniff implements \PHP_CodeSniffer_Sniff
 		}
 
 		if (!$this->isClassUsingSmartObject($phpcsFile, $stackPtr)) {
-			$phpcsFile->addError('Class should either use SmartObject or extend another class.', $stackPtr);
+			$phpcsFile->addError('Class should either use SmartObject or extend another class.', $stackPtr, self::CODE_USING_SMART_OBJECT_EXPECTED);
 		}
 	}
 
