@@ -10,6 +10,11 @@ use SlevomatCodingStandard\Sniffs\TestCase;
 class UseOfSmartObjectSniffTest extends TestCase
 {
 
+	public function testCi()
+	{
+		$this->assertEquals(1, 2);
+	}
+
 	public function testInvalidClass()
 	{
 		$resultFile = $this->checkFile(__DIR__ . '/data/EmptyClass.php');
