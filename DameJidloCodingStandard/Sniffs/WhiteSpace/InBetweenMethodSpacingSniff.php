@@ -4,8 +4,8 @@ declare(strict_types = 1);
 namespace DameJidloCodingStandard\Sniffs\WhiteSpace;
 
 use DameJidloCodingStandard\Helpers\WhiteSpace\EmptyLinesResizer;
-use PHP_CodeSniffer_File;
-use Squiz_Sniffs_WhiteSpace_FunctionSpacingSniff;
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\FunctionSpacingSniff;
 
 
 
@@ -20,7 +20,7 @@ use Squiz_Sniffs_WhiteSpace_FunctionSpacingSniff;
  * - Method is the first in the class, preceded by open bracket.
  * - Method is the last in the class, followed by close bracket.
  */
-final class InBetweenMethodSpacingSniff extends Squiz_Sniffs_WhiteSpace_FunctionSpacingSniff
+final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 {
 
 	/**
@@ -44,7 +44,7 @@ final class InBetweenMethodSpacingSniff extends Squiz_Sniffs_WhiteSpace_Function
 	private $tokens;
 
 	/**
-	 * @var PHP_CodeSniffer_File
+	 * @var File
 	 */
 	private $file;
 
@@ -61,10 +61,10 @@ final class InBetweenMethodSpacingSniff extends Squiz_Sniffs_WhiteSpace_Function
 
 
 	/**
-	 * @param PHP_CodeSniffer_File $file
+	 * @param File $file
 	 * @param int $position
 	 */
-	public function process(PHP_CodeSniffer_File $file, $position)
+	public function process(File $file, $position)
 	{
 		// Fix type
 		$this->blankLinesBetweenMethods = (int) $this->blankLinesBetweenMethods;
@@ -84,7 +84,7 @@ final class InBetweenMethodSpacingSniff extends Squiz_Sniffs_WhiteSpace_Function
 					$this->blankLinesBetweenMethods,
 					$blankLinesCountAfterFunction
 				);
-				$fix = $file->addFixableError($error, $position);
+				$fix = $file->addFixableError($error, $position, '');
 				if ($fix) {
 					$this->fixSpacingAfterMethod($blankLinesCountAfterFunction);
 				}

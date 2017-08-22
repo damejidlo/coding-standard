@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace DameJidloCodingStandard\Helpers\WhiteSpace;
 
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Files\File;
 
 
 
@@ -15,7 +15,7 @@ final class EmptyLinesResizer
 {
 
 	public static function resizeLines(
-		PHP_CodeSniffer_File $file,
+		File $file,
 		int $position,
 		int $currentLineCount,
 		int $desiredLineCount
@@ -29,7 +29,7 @@ final class EmptyLinesResizer
 	}
 
 
-	private static function reduceBlankLines(PHP_CodeSniffer_File $file, int $position, int $from, int $to)
+	private static function reduceBlankLines(File $file, int $position, int $from, int $to)
 	{
 		for ($i = $from; $i > $to; $i--) {
 			$file->fixer->replaceToken($position, '');
@@ -38,7 +38,7 @@ final class EmptyLinesResizer
 	}
 
 
-	private static function increaseBlankLines(PHP_CodeSniffer_File $file, int $position, int $from, int $to)
+	private static function increaseBlankLines(File $file, int $position, int $from, int $to)
 	{
 		for ($i = $from; $i < $to; $i++) {
 			$file->fixer->addContentBefore($position, PHP_EOL);
