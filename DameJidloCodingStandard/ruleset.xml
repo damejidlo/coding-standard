@@ -22,12 +22,20 @@
 	<rule ref="PSR2.Methods.MethodDeclaration"/>
 	<rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
 	<rule ref="../../../../vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml">
-		<exclude name="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
 		<exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName"/>
 		<exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameAfterKeyword"/>
 		<exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions"/>
 		<exclude name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly"/>
-		<exclude name="SlevomatCodingStandard.Namespaces.UnusedUses"/>
 		<exclude name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces"/>
+	</rule>
+	<rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements">
+		<properties>
+			<property name="alwaysUsedPropertiesAnnotations" type="array" value="@ORM\Column,@ORM\ManyToOne,@ORM\OneToMany,@ORM\ManyToMany,@ORM\JoinColumn"/>
+		</properties>
+	</rule>
+	<rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+		<properties>
+			<property name="searchAnnotations" value="true"/>
+		</properties>
 	</rule>
 </ruleset>
