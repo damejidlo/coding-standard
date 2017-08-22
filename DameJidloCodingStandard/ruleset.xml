@@ -34,6 +34,7 @@
 		<exclude name="SlevomatCodingStandard.TypeHints.DeclareStrictTypes"/>
 		<exclude name="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
 		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration"/>
+		<exclude name="Squiz.Commenting.FunctionComment"/>
 	</rule>
 	<rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements">
 		<properties>
