@@ -30,10 +30,4 @@
 		<exclude name="SlevomatCodingStandard.Namespaces.UnusedUses"/>
 		<exclude name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces"/>
 	</rule>
-	<rule ref="../../../../../vendor/zenify/coding-standard/src/ZenifyCodingStandard/Sniffs/WhiteSpace/InBetweenMethodSpacingSniff.php"/>
-	<rule ref="ZenifyCodingStandard.WhiteSpace.InBetweenMethodSpacing">
-		<properties>
-			<property name="blankLinesBetweenMethods" value="3"/>
-		</properties>
-	</rule>
 </ruleset>
