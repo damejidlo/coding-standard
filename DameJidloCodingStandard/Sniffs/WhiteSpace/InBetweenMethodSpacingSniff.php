@@ -98,6 +98,9 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 	{
 		$closer = $this->getScopeCloser();
 		$nextLineToken = $this->getNextLineTokenByScopeCloser($closer);
+		if ($nextLineToken === NULL) {
+			return 0;
+		}
 
 		$nextContent = $this->getNextLineContent($nextLineToken);
 		if ($nextContent !== FALSE) {
@@ -117,7 +120,7 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 	{
 		$closer = $this->getScopeCloser();
 		$nextLineToken = $this->getNextLineTokenByScopeCloser($closer);
-		if ($this->tokens[$nextLineToken + 1]['code'] === T_CLOSE_CURLY_BRACKET) {
+		if ($nextLineToken === NULL || $this->tokens[$nextLineToken + 1]['code'] === T_CLOSE_CURLY_BRACKET) {
 			return TRUE;
 		}
 		return FALSE;
