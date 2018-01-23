@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <ruleset name="DameJidloCodingStandard">
 	<description>DameJidlo.cz coding standard.</description>
+	<arg name="extensions" value="php,phpt"/>
 	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 	<rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
 	<rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
