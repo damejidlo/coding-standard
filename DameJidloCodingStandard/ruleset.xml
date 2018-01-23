@@ -15,6 +15,9 @@
 			<property name="absoluteLineLimit" value="160"/>
 		</properties>
 	</rule>
+	<rule ref="Generic.PHP.CharacterBeforePHPOpeningTag"/>
+	<rule ref="Generic.PHP.DeprecatedFunctions"/>
+	<rule ref="Generic.PHP.ForbiddenFunctions"/>
 	<rule ref="Generic.PHP.UpperCaseConstant"/>
 	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
 	<rule ref="PSR2.ControlStructures.ElseIfDeclaration"/>
