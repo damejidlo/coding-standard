@@ -2,7 +2,7 @@
 	"name": "damejidlo/coding-standard",
 	"license": "MIT",
 	"require": {
-		"slevomat/coding-standard": "^3.3.0"
+		"slevomat/coding-standard": "^4.3.1"
 	},
 	"autoload": {
 		"psr-4": {
