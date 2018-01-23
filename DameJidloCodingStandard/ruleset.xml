@@ -80,6 +80,9 @@
 
 	<!-- Strict settings for tests -->
 	<rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+		<properties>
+			<property name="newlinesCountBetweenOpenTagAndDeclare" value="1"/>
+		</properties>
 		<include-pattern>*.phpt</include-pattern>
 	</rule>
 </ruleset>
