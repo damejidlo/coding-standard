@@ -3,15 +3,9 @@ language: php
 php:
     - "7.1"
 
-build:
-    ci:
-      - composer self-update
-      - composer install --no-interaction --optimize-autoloader
-      - ./vendor/bin/phpunit -c ./tests/phpunit.xml ./tests
+before_script:
+  - composer self-update || echo "[ERROR] update-composer failed!"
+  - composer install --no-interaction --optimize-autoloader
 
-    post_ci:
-      - df
-
-    on_failure:
-      - 'for i in $(find ./tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done'
-      - 'for i in $(find ./tests -name \*.expected); do echo "--- $i"; cat $i; echo; echo; done'
+script:
+  - ./vendor/bin/phpunit -c ./tests/phpunit.xml ./tests
