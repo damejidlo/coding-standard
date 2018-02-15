@@ -63,11 +63,6 @@
 		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.UselessDocComment"/>
 	</rule>
 	<rule ref="DameJidloCodingStandard.TypeHints.TypeHintDeclaration">
-		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint"/>
-		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.MissingPropertyTypeHint"/>
-		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.MissingReturnTypeHint"/>
-		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessParameterAnnotation"/>
-		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessReturnAnnotation"/>
 		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessDocComment"/>
 	</rule>
 	<rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements">
