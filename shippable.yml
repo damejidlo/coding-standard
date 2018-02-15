@@ -1,11 +1,29 @@
 language: php
 
-php:
-    - 7.1
+env:
+  - secure: PQeXnxjCUHor31zsoq2dQNcAdFzFyEnAYrU4+wLXyRY61XaFaL1gaPJXIfZViCCBq7IacaS7iAYux9l+2QNIAe1IFF93dBWW/POcAh8a3TAgDgFkOUSXSo+XjoD+v3CNVhqWD72UxyMi/eAxHif2b1C5YRYYQMDXp1nYFqQmjGFR7IFIR80A3pDkgadwzbP79mPFzRkfLy5In1rD1ZhTsATh+t/uRyUkMjCjcCQwgoxLS1yHplw5IRNeIuZQdzU+I5NdHYylua0t4S13ZTokKWxKz6Q1xCb7W1nAUwGQI/PHiyKXAhxeu+yeiZn8wYmpHrMig+8ksT29EZ5xAkLUoQ==
 
-before_script:
-  - composer self-update || echo "[ERROR] update-composer failed!"
-  - composer install --no-interaction --optimize-autoloader
+build:
+    pre_ci_boot:
+        image_name: damejidloci/build-k1
+        pull: true
+        options: "-e HOME=/root --privileged"
 
-script:
-  - ./vendor/bin/phpunit -c ./tests/phpunit.xml ./tests
+    cache: true
+    cache_dir_list:
+        - $HOME/.composer
+        - $HOME/.phpcs-cache
+        - $SHIPPABLE_BUILD_DIR/vendor
+        - $SHIPPABLE_BUILD_DIR/node_modules
+
+    ci:
+      # install
+      - composer self-update || echo "failed :("
+      - time composer install --no-interaction --optimize-autoloader
+
+      # script
+      - ./vendor/bin/phpunit -c ./tests/phpunit.xml ./tests
+
+    post_ci:
+      - df
+
