@@ -10,6 +10,13 @@ use SlevomatCodingStandard\Sniffs\TestCase;
 class TypeHintDeclarationSniffTest extends TestCase
 {
 
+	public function testCi()
+	{
+		$this->assertTrue(FALSE);
+	}
+
+
+
 	public function testClassWithoutStrictTypesAndWithoutTypeHints()
 	{
 		$resultFile = $this->checkFile(__DIR__ . '/data/ClassWithoutStrictTypesAndWithoutTypeHints.php');
