@@ -44,6 +44,7 @@
 	<rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
 	<rule ref="../../../../vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml">
 		<exclude name="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators"/>
+		<exclude name="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
 		<exclude name="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses.UsedWithParentheses"/>
 		<exclude name="SlevomatCodingStandard.ControlStructures.RequireYodaComparison"/>
 		<exclude name="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
