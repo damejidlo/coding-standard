@@ -20,7 +20,7 @@ class TypeHintDeclarationSniff extends SlevomatTypeHintDeclarationSniff
 
 
 
-	private function hasStrictTypesDeclared(\PHP_CodeSniffer\Files\File $phpcsFile)
+	private function hasStrictTypesDeclared(\PHP_CodeSniffer\Files\File $phpcsFile) : bool
 	{
 		$tokens = $phpcsFile->getTokens();
 
