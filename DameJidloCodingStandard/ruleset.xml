@@ -64,6 +64,8 @@
 	</rule>
 	<rule ref="DameJidloCodingStandard.TypeHints.TypeHintDeclaration">
 		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessDocComment"/>
+		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessParameterAnnotation"/>
+		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessReturnAnnotation"/>
 	</rule>
 	<rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements">
 		<properties>
