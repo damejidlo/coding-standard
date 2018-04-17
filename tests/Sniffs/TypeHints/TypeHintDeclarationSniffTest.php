@@ -10,7 +10,7 @@ use SlevomatCodingStandard\Sniffs\TestCase;
 class TypeHintDeclarationSniffTest extends TestCase
 {
 
-	public function testClassWithoutStrictTypesAndWithoutTypeHints()
+	public function testClassWithoutStrictTypesAndWithoutTypeHints() : void
 	{
 		$resultFile = $this->checkFile(__DIR__ . '/data/ClassWithoutStrictTypesAndWithoutTypeHints.php');
 
@@ -19,7 +19,7 @@ class TypeHintDeclarationSniffTest extends TestCase
 
 
 
-	public function testClassWithStrictTypesAndWithoutTypeHints()
+	public function testClassWithStrictTypesAndWithoutTypeHints() : void
 	{
 		$resultFile = $this->checkFile(__DIR__ . '/data/ClassWithStrictTypesAndWithoutTypeHints.php');
 
@@ -28,7 +28,7 @@ class TypeHintDeclarationSniffTest extends TestCase
 
 
 
-	public function testClassWithStrictTypesAndWithTypeHints()
+	public function testClassWithStrictTypesAndWithTypeHints() : void
 	{
 		$resultFile = $this->checkFile(__DIR__ . '/data/ClassWithStrictTypesAndWithTypeHints.php');
 
