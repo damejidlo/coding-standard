@@ -5,16 +5,14 @@ env:
 
 build:
     pre_ci_boot:
-        image_name: damejidloci/build-k1
+        image_name: damejidloci/build-k4
         pull: true
         options: "-e HOME=/root --privileged"
 
     cache: true
     cache_dir_list:
         - $HOME/.composer
-        - $HOME/.phpcs-cache
         - $SHIPPABLE_BUILD_DIR/vendor
-        - $SHIPPABLE_BUILD_DIR/node_modules
 
     ci:
       # install
