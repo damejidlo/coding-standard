@@ -23,6 +23,7 @@ build:
       # script
       - ./vendor/bin/parallel-lint -e php,phpt --exclude vendor .
       - ./vendor/bin/phpunit -c ./tests/phpunit.xml ./tests
+      - ./vendor/bin/phpcs --standard=DameJidloCodingStandard/ruleset.xml DameJidloCodingStandard/ tests/
 
     post_ci:
       - df
