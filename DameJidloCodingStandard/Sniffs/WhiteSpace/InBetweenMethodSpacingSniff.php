@@ -6,6 +6,7 @@ namespace DameJidloCodingStandard\Sniffs\WhiteSpace;
 use DameJidloCodingStandard\Helpers\WhiteSpace\EmptyLinesResizer;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\FunctionSpacingSniff;
+use SlevomatCodingStandard\Helpers\SniffSettingsHelper;
 
 
 
@@ -68,7 +69,7 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 	public function process(File $file, $position) : void
 	{
 		// Fix type
-		$this->blankLinesBetweenMethods = (int) $this->blankLinesBetweenMethods;
+		$this->blankLinesBetweenMethods = SniffSettingsHelper::normalizeInteger($this->blankLinesBetweenMethods);
 
 		$this->file = $file;
 		$this->position = $position;
@@ -98,6 +99,9 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 	private function getBlankLineCountAfterFunction() : int
 	{
 		$closer = $this->getScopeCloser();
+		if (!is_int($closer)) {
+			return 0;
+		}
 		$nextLineToken = $this->getNextLineTokenByScopeCloser($closer);
 		if ($nextLineToken === NULL) {
 			return 0;
@@ -120,6 +124,9 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 	private function isLastMethod() : bool
 	{
 		$closer = $this->getScopeCloser();
+		if (!is_int($closer)) {
+			return TRUE;
+		}
 		$nextLineToken = $this->getNextLineTokenByScopeCloser($closer);
 		if ($nextLineToken === NULL || $this->tokens[$nextLineToken + 1]['code'] === T_CLOSE_CURLY_BRACKET) {
 			return TRUE;
@@ -136,7 +143,7 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 	{
 		if (isset($this->tokens[$this->position]['scope_closer']) === FALSE) {
 			// Must be an interface method, so the closer is the semi-colon.
-			return $this->file->findNext(T_SEMICOLON, $this->position);
+			return $this->file->findNext([T_SEMICOLON], $this->position);
 		}
 
 		return $this->tokens[$this->position]['scope_closer'];
@@ -167,14 +174,11 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 
 	/**
 	 * @param int $nextLineToken
-	 * @return FALSE|int
+	 * @return bool|int
 	 */
 	private function getNextLineContent(int $nextLineToken)
 	{
-		if ($nextLineToken !== NULL) {
-			return $this->file->findNext(T_WHITESPACE, ($nextLineToken + 1), NULL, TRUE);
-		}
-		return FALSE;
+		return $this->file->findNext(T_WHITESPACE, ($nextLineToken + 1), NULL, TRUE);
 	}
 
 
