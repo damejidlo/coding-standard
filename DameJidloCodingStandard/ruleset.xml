@@ -6,6 +6,12 @@
 
 	<arg name="extensions" value="php,phpt"/>
 
+	<rule ref="DameJidloCodingStandard.TypeHints.TypeHintDeclaration">
+		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessDocComment"/>
+		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessParameterAnnotation"/>
+		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessReturnAnnotation"/>
+	</rule>
+
 	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 	<rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
 	<rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
@@ -25,27 +31,12 @@
 	<rule ref="Generic.PHP.ForbiddenFunctions"/>
 	<rule ref="Generic.PHP.UpperCaseConstant"/>
 	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
+
 	<rule ref="PSR2.ControlStructures.ElseIfDeclaration"/>
 	<rule ref="PSR2.Files.ClosingTag"/>
 	<rule ref="PSR2.Methods.MethodDeclaration"/>
 	<rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
-	<rule ref="Squiz.PHP.GlobalKeyword"/>
-	<rule ref="Squiz.PHP.InnerFunctions"/>
-	<rule ref="Squiz.PHP.LowercasePHPFunctions"/>
-	<rule ref="Squiz.WhiteSpace.CastSpacing"/>
-	<rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
-	<rule ref="Squiz.WhiteSpace.MemberVarSpacing"/>
-	<rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing">
-		<properties>
-			<property name="ignoreNewlines" value="true"/>
-		</properties>
-	</rule>
-	<rule ref="Squiz.WhiteSpace.OperatorSpacing">
-		<properties>
-			<property name="ignoreNewlines" value="true"/>
-		</properties>
-	</rule>
-	<rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+
 	<rule ref="SlevomatCodingStandard">
 		<exclude name="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators"/>
 		<exclude name="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses.UsedWithParentheses"/>
@@ -66,11 +57,6 @@
 		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.UselessReturnAnnotation"/>
 		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.UselessDocComment"/>
 	</rule>
-	<rule ref="DameJidloCodingStandard.TypeHints.TypeHintDeclaration">
-		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessDocComment"/>
-		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessParameterAnnotation"/>
-		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessReturnAnnotation"/>
-	</rule>
 	<rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements">
 		<properties>
 			<property name="alwaysUsedPropertiesAnnotations" type="array" value="@ORM\Column,@ORM\ManyToOne,@ORM\OneToMany,@ORM\ManyToMany,@ORM\JoinColumn"/>
@@ -81,17 +67,34 @@
 			<property name="searchAnnotations" value="true"/>
 		</properties>
 	</rule>
+	<rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+		<properties>
+			<property name="newlinesCountBetweenOpenTagAndDeclare" value="1"/>
+		</properties>
+		<!-- Strict settings for tests -->
+		<include-pattern>*.phpt</include-pattern>
+	</rule>
 	<rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing">
 		<properties>
 			<property name="spacesCountBeforeColon" value="1"/>
 		</properties>
 	</rule>
 
-	<!-- Strict settings for tests -->
-	<rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+	<rule ref="Squiz.PHP.GlobalKeyword"/>
+	<rule ref="Squiz.PHP.InnerFunctions"/>
+	<rule ref="Squiz.PHP.LowercasePHPFunctions"/>
+	<rule ref="Squiz.WhiteSpace.CastSpacing"/>
+	<rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+	<rule ref="Squiz.WhiteSpace.MemberVarSpacing"/>
+	<rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing">
 		<properties>
-			<property name="newlinesCountBetweenOpenTagAndDeclare" value="1"/>
+			<property name="ignoreNewlines" value="true"/>
 		</properties>
-		<include-pattern>*.phpt</include-pattern>
 	</rule>
+	<rule ref="Squiz.WhiteSpace.OperatorSpacing">
+		<properties>
+			<property name="ignoreNewlines" value="true"/>
+		</properties>
+	</rule>
+	<rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
 </ruleset>
