@@ -54,6 +54,7 @@
 	<rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
 		<properties>
 			<property name="searchAnnotations" value="true"/>
+			<property name="ignoredAnnotationNames" type="array" value="@persistent,@secured,@testCase,@dataProvider"/>
 		</properties>
 	</rule>
 	<rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
