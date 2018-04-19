@@ -26,7 +26,7 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 	/**
 	 * @var string
 	 */
-	const NAME = 'DameJidloCodingStandard.WhiteSpace.InBetweenMethodSpacing';
+	private const NAME = 'DameJidloCodingStandard.WhiteSpace.InBetweenMethodSpacing';
 
 	/**
 	 * @var int
@@ -39,7 +39,7 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 	private $position;
 
 	/**
-	 * @var array
+	 * @var mixed[]
 	 */
 	private $tokens;
 
@@ -61,10 +61,11 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 
 
 	/**
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
 	 * @param File $file
 	 * @param int $position
 	 */
-	public function process(File $file, $position)
+	public function process(File $file, $position) : void
 	{
 		// Fix type
 		$this->blankLinesBetweenMethods = (int) $this->blankLinesBetweenMethods;
@@ -84,7 +85,7 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 					$this->blankLinesBetweenMethods,
 					$blankLinesCountAfterFunction
 				);
-				$fix = $file->addFixableError($error, $position, '');
+				$fix = $file->addFixableError($error, $position, self::NAME);
 				if ($fix) {
 					$this->fixSpacingAfterMethod($blankLinesCountAfterFunction);
 				}
@@ -143,10 +144,7 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 
 
 
-	/**
-	 * @return int|NULL
-	 */
-	private function getNextLineTokenByScopeCloser(int $closer)
+	private function getNextLineTokenByScopeCloser(int $closer) : ?int
 	{
 		$nextLineToken = NULL;
 		for ($i = $closer; $i < $this->file->numTokens; $i++) {
@@ -155,7 +153,7 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 
 			} else {
 				$nextLineToken = ($i + 1);
-				if ( ! isset($this->tokens[$nextLineToken])) {
+				if (!isset($this->tokens[$nextLineToken])) {
 					$nextLineToken = NULL;
 				}
 
@@ -168,6 +166,7 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 
 
 	/**
+	 * @param int $nextLineToken
 	 * @return FALSE|int
 	 */
 	private function getNextLineContent(int $nextLineToken)
@@ -180,7 +179,7 @@ final class InBetweenMethodSpacingSniff extends FunctionSpacingSniff
 
 
 
-	private function fixSpacingAfterMethod(int $blankLinesCountAfterFunction)
+	private function fixSpacingAfterMethod(int $blankLinesCountAfterFunction) : void
 	{
 		EmptyLinesResizer::resizeLines(
 			$this->file,
