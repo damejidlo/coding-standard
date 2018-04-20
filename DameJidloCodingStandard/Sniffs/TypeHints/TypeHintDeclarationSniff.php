@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace DameJidloCodingStandard\Sniffs\TypeHints;
 
+use PHP_CodeSniffer\Files\File;
 use SlevomatCodingStandard\Helpers\TokenHelper;
 use SlevomatCodingStandard\Sniffs\TypeHints\TypeHintDeclarationSniff as SlevomatTypeHintDeclarationSniff;
 
@@ -11,7 +12,12 @@ use SlevomatCodingStandard\Sniffs\TypeHints\TypeHintDeclarationSniff as Slevomat
 class TypeHintDeclarationSniff extends SlevomatTypeHintDeclarationSniff
 {
 
-	public function process(\PHP_CodeSniffer\Files\File $phpcsFile, $pointer) : void
+	/**
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
+	 * @param File $phpcsFile
+	 * @param int $pointer
+	 */
+	public function process(File $phpcsFile, $pointer) : void
 	{
 		if ($this->hasStrictTypesDeclared($phpcsFile)) {
 			parent::process($phpcsFile, $pointer);
@@ -20,7 +26,7 @@ class TypeHintDeclarationSniff extends SlevomatTypeHintDeclarationSniff
 
 
 
-	private function hasStrictTypesDeclared(\PHP_CodeSniffer\Files\File $phpcsFile) : bool
+	private function hasStrictTypesDeclared(File $phpcsFile) : bool
 	{
 		$tokens = $phpcsFile->getTokens();
 

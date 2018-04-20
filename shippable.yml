@@ -21,7 +21,9 @@ build:
       - time composer install --no-interaction --optimize-autoloader
 
       # script
+      - ./vendor/bin/parallel-lint -e php,phpt --exclude vendor .
       - ./vendor/bin/phpunit -c ./tests/phpunit.xml ./tests
+      - ./vendor/bin/phpcs --standard=DameJidloCodingStandard/ruleset.xml --ignore=tests/Sniffs/TypeHints/data/* DameJidloCodingStandard/ tests/
 
     post_ci:
       - df
