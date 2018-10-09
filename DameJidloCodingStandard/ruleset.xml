@@ -64,8 +64,10 @@
 	<rule ref="SlevomatCodingStandard.Commenting.EmptyComment"/>
 	<rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration"/>
 	<rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.DisallowContinueWithoutIntegerOperandInSwitch"/>
 	<rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
 	<rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
+	<rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
 	<rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
 	<rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
 	<rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine"/>
@@ -85,7 +87,9 @@
 	</rule>
 	<rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
 	<rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
 	<rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
+	<rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
 	<rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
 		<properties>
 			<property name="newlinesCountBetweenOpenTagAndDeclare" value="1"/>
@@ -114,6 +118,7 @@
 		</property>
 	</rule>
 	<rule ref="SlevomatCodingStandard.Types.EmptyLinesAroundTypeBraces"/>
+	<rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
 
 	<rule ref="Squiz.PHP.GlobalKeyword"/>
 	<rule ref="Squiz.PHP.InnerFunctions"/>
