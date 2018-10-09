@@ -10,6 +10,10 @@
 		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessDocComment"/>
 		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessParameterAnnotation"/>
 		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessReturnAnnotation"/>
+		<property name="traversableTypeHints" type="array">
+			<element value="Traversable"/>
+			<element value="Doctrine\Common\Collections\Collection"/>
+		</property>
 	</rule>
 
 	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
@@ -103,6 +107,10 @@
 		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.UselessParameterAnnotation"/>
 		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.UselessReturnAnnotation"/>
 		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.UselessDocComment"/>
+		<property name="traversableTypeHints" type="array">
+			<element value="Traversable"/>
+			<element value="Doctrine\Common\Collections\Collection"/>
+		</property>
 	</rule>
 	<rule ref="SlevomatCodingStandard.Types.EmptyLinesAroundTypeBraces"/>
 
