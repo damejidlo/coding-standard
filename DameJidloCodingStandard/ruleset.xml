@@ -13,6 +13,9 @@
 	</rule>
 
 	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+	<rule ref="Generic.CodeAnalysis.AssignmentInCondition">
+		<exclude name="Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition"/>
+	</rule>
 	<rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
 	<rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
 	<rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
@@ -32,6 +35,8 @@
 	<rule ref="Generic.PHP.UpperCaseConstant"/>
 	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
 
+	<rule ref="PSR12.Operators.OperatorSpacing"/>
+
 	<rule ref="PSR2.ControlStructures.ElseIfDeclaration"/>
 	<rule ref="PSR2.Files.ClosingTag"/>
 	<rule ref="PSR2.Methods.MethodDeclaration"/>
@@ -41,7 +46,13 @@
 	<rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
 	<rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements">
 		<properties>
-			<property name="alwaysUsedPropertiesAnnotations" type="array" value="@ORM\Column,@ORM\ManyToOne,@ORM\OneToMany,@ORM\ManyToMany,@ORM\JoinColumn"/>
+			<property name="alwaysUsedPropertiesAnnotations" type="array">
+				<element value="@ORM\Column"/>
+				<element value="@ORM\ManyToOne"/>
+				<element value="@ORM\OneToMany"/>
+				<element value="@ORM\ManyToMany"/>
+				<element value="@ORM\JoinColumn"/>
+			</property>
 		</properties>
 	</rule>
 	<rule ref="SlevomatCodingStandard.Commenting.DisallowOneLinePropertyDocComment"/>
@@ -56,7 +67,12 @@
 	<rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
 		<properties>
 			<property name="searchAnnotations" value="true"/>
-			<property name="ignoredAnnotationNames" type="array" value="@persistent,@secured,@testCase,@dataProvider"/>
+			<property name="ignoredAnnotationNames" type="array">
+				<element value="@persistent"/>
+				<element value="@secured"/>
+				<element value="@testCase"/>
+				<element value="@dataProvider"/>
+			</property>
 		</properties>
 	</rule>
 	<rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
