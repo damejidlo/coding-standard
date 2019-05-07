@@ -5,9 +5,9 @@ env:
 
 build:
     pre_ci_boot:
-        image_name: damejidloci/build-k4
+        image_name: damejidloci/build-k5
+        image_tag: 2
         pull: true
-        image_tag: latest
         options: "-e HOME=/root --privileged"
 
     cache: true
