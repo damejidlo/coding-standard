@@ -160,9 +160,12 @@
 		</properties>
 	</rule>
 	<rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
-		<property name="traversableTypeHints" type="array">
-			<element value="Traversable"/>
-		</property>
+		<properties>
+			<property name="allAnnotationsAreUseful" value="true"/>
+			<property name="traversableTypeHints" type="array">
+				<element value="Traversable"/>
+			</property>
+		</properties>
 	</rule>
 	<rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
 	<rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
