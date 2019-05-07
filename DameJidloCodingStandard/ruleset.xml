@@ -128,6 +128,7 @@
 
 	<rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
 	<rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
+	<rule ref="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces"/>
 	<rule ref="SlevomatCodingStandard.Classes.TraitUseDeclaration"/>
 	<rule ref="SlevomatCodingStandard.Classes.TraitUseSpacing">
 		<exclude name="SlevomatCodingStandard.Classes.TraitUseSpacing.IncorrectLinesCountAfterLastUse"/><!-- conflicts with spacing around methods -->
@@ -171,6 +172,7 @@
 	<rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
 	<rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace"/>
 	<rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
+	<rule ref="SlevomatCodingStandard.Operators.SpreadOperatorSpacing"/>
 	<rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
 	<rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
 	<rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
@@ -202,7 +204,6 @@
 		</property>
 	</rule>
 	<rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
-	<rule ref="SlevomatCodingStandard.Types.EmptyLinesAroundTypeBraces"/>
 	<rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
 
 	<rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
