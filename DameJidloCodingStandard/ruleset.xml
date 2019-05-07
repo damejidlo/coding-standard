@@ -6,16 +6,6 @@
 
 	<arg name="tab-width" value="4"/>
 
-	<rule ref="DameJidloCodingStandard.TypeHints.TypeHintDeclaration">
-		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessDocComment"/>
-		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessParameterAnnotation"/>
-		<exclude name="DameJidloCodingStandard.TypeHints.TypeHintDeclaration.UselessReturnAnnotation"/>
-		<property name="traversableTypeHints" type="array">
-			<element value="Traversable"/>
-			<element value="Doctrine\Common\Collections\Collection"/>
-		</property>
-	</rule>
-
 	<rule ref="Generic.Arrays.ArrayIndent">
 		<exclude name="Generic.Arrays.ArrayIndent.KeyIncorrect"/><!-- conflicts with indentation of multi-line arrays union -->
 		<exclude name="Generic.Arrays.ArrayIndent.CloseBraceIncorrect"/><!-- conflicts with indentation of multi-line arrays union -->
@@ -172,12 +162,6 @@
 		</properties>
 	</rule>
 	<rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
-		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint"/>
-		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingPropertyTypeHint"/>
-		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingReturnTypeHint"/>
-		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.UselessParameterAnnotation"/>
-		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.UselessReturnAnnotation"/>
-		<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.UselessDocComment"/>
 		<property name="traversableTypeHints" type="array">
 			<element value="Traversable"/>
 		</property>
