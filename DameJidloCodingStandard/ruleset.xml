@@ -238,6 +238,9 @@
 			<property name="spacing" value="1"/>
 		</properties>
 	</rule>
+	<rule ref="Squiz.Strings.DoubleQuoteUsage">
+		<exclude name="Squiz.Strings.DoubleQuoteUsage.ContainsVar"/>
+	</rule>
 	<rule ref="Squiz.WhiteSpace.CastSpacing"/>
 	<rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
 	<rule ref="Squiz.WhiteSpace.FunctionSpacing">
