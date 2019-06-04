@@ -84,6 +84,7 @@
 	<rule ref="PEAR.Classes.ClassDeclaration"/>
 	<rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
 
+	<rule ref="PSR1.Classes.ClassDeclaration"/>
 	<rule ref="PSR1.Files.SideEffects"/>
 	<rule ref="PSR1.Methods.CamelCapsMethodName"/>
 
