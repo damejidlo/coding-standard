@@ -145,6 +145,11 @@
 	<rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
 	<rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace"/>
 	<rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
+		<properties>
+			<property name="linesCountAfterLastUse" value="3"/>
+		</properties>
+	</rule>
 	<rule ref="SlevomatCodingStandard.Operators.RequireOnlyStandaloneIncrementAndDecrementOperators"/>
 	<rule ref="SlevomatCodingStandard.Operators.SpreadOperatorSpacing"/>
 	<rule ref="SlevomatCodingStandard.PHP.ShortList"/>
