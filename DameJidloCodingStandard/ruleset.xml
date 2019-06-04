@@ -192,6 +192,7 @@
 		<exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"/><!-- multiple values can be written on a single line -->
 		<exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned"/><!-- we don't want spacing with alignment -->
 	</rule>
+	<rule ref="Squiz.Classes.ClassFileName"/>
 	<rule ref="Squiz.Classes.ValidClassName"/>
 	<rule ref="Squiz.Commenting.DocCommentAlignment">
 		<exclude name="Squiz.Commenting.DocCommentAlignment.SpaceAfterStar"/><!-- space needed for indented annotations -->
