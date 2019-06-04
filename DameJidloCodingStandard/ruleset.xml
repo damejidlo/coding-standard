@@ -200,6 +200,18 @@
 	<rule ref="Squiz.Commenting.DocCommentAlignment">
 		<exclude name="Squiz.Commenting.DocCommentAlignment.SpaceAfterStar"/><!-- space needed for indented annotations -->
 	</rule>
+	<rule ref="Squiz.Commenting.FunctionComment.DuplicateReturn"/>
+	<rule ref="Squiz.Commenting.FunctionComment.EmptySees"/>
+	<rule ref="Squiz.Commenting.FunctionComment.ExtraParamComment"/>
+	<rule ref="Squiz.Commenting.FunctionComment.InvalidReturnNotVoid"/>
+	<rule ref="Squiz.Commenting.FunctionComment.InvalidReturnVoid"/>
+	<rule ref="Squiz.Commenting.FunctionComment.InvalidThrows"/>
+	<rule ref="Squiz.Commenting.FunctionComment.MissingParamName"/>
+	<rule ref="Squiz.Commenting.FunctionComment.MissingParamType"/>
+	<rule ref="Squiz.Commenting.FunctionComment.MissingReturnType"/>
+	<rule ref="Squiz.Commenting.FunctionComment.ParamNameNoCaseMatch"/>
+	<rule ref="Squiz.Commenting.FunctionComment.SpacingAfter"/>
+	<rule ref="Squiz.Commenting.FunctionComment.WrongStyle"/>
 	<rule ref="Squiz.ControlStructures.ControlSignature"/>
 	<rule ref="Squiz.ControlStructures.ForEachLoopDeclaration"/>
 	<rule ref="Squiz.ControlStructures.ForLoopDeclaration"/>
