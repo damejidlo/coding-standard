@@ -112,6 +112,9 @@
 	<rule ref="PSR2.Methods.FunctionClosingBrace"/>
 	<rule ref="PSR2.Methods.MethodDeclaration"/>
 	<rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
+	<rule ref="PSR2.Namespaces.UseDeclaration">
+		<exclude name="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse"/><!-- checked by SlevomatCodingStandard.Namespaces.UseSpacing -->
+	</rule>
 
 	<rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
 	<rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
