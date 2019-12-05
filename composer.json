@@ -1,5 +1,7 @@
 {
 	"name": "damejidlo/coding-standard",
+	"type" : "phpcodesniffer-standard",
+	"description": "DameJidlo.cz coding standard.",
 	"license": "MIT",
 	"require": {
 		"php": ">=7.2",
