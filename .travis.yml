@@ -1,0 +1,22 @@
+language: php
+
+php:
+  - 7.2
+  - 7.3
+  - 7.4
+
+env:
+  - COMPOSER_ARGS=""
+  - COMPOSER_ARGS="--prefer-lowest"
+
+install:
+  - travis_retry composer update --no-interaction --optimize-autoloader --prefer-dist $COMPOSER_ARGS
+
+script:
+  - vendor/bin/phpcs --version
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache
